@@ -1,26 +1,28 @@
 <%- layout("layouts/boilerplate") %>
 
-<link rel="stylesheet" type="text/css" href="/css/pages/register.css">
+<link rel="stylesheet" type="text/css" href="/css/pages/user/sign-in-up.css">
 
-<div class="container d-flex justify-content-center align-items-center">
-    <div class="card w-50">
-        <div class="card-body">
-            <h5 class="card-title">Sign-up</h5>
-            <form action="/register" method="POST" class="needs-validation" novalidate>
-                <div class="mb-3">
-                    <label for="form-label" for="username">Username</label>
-                    <input class="form-control" type="text" name="username" id="username" required>
-                </div>
-                <div class="mb-3">
-                    <label for="form-label" for="email">Email</label>
-                    <input class="form-control" type="email" name="email" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="form-label" for="password">Password</label>
-                    <input class="form-control" type="password" name="password" id="password" required>
-                </div>
-                <button id="sign-up" class="btn btn-warning">Sign-up</button>
-            </form>
+<main class="row">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card w-50">
+            <div class="card-body">
+                <h5 class="card-title">Sign-up</h5>
+                <form action="/register" method="POST" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="form-label" for="username">Username</label>
+                        <input class="form-control" type="text" name="username" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="form-label" for="email">Email</label>
+                        <input class="form-control" type="email" name="email" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="form-label" for="password">Password</label>
+                        <input class="form-control" type="password" name="password" id="password" required>
+                    </div>
+                    <button id="sign-up" class="btn btn-warning">Sign-up</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</main>

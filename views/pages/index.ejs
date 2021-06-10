@@ -1,0 +1,14 @@
+<%- layout("layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/pages/index.css">
+
+<div id="index" class="row">
+    <aside class="col-2">
+        
+    </aside>
+
+    <main class="col-10 p-4">
+        <% for(let post of posts) { %> 
+           <%- include("../partials/post", { post }) %>
+        <% } %>
+    </main>
+</div>

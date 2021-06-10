@@ -28,8 +28,8 @@ app.use(async (req, res, next) => {
 		let payload = jwt.decode(req.cookies["access-token"], process.env.JWT_SECRET);
 
 		if (require("moment")().unix() < payload.expiresAt) {
-			req.user = await require("./models/user").GetById(payload.userId);
-		}
+			req.user = payload;
+		} 
 	}
 
 	res.locals.user = req.user;
@@ -42,3 +42,4 @@ app.listen(process.env.PORT, process.env.HOSTNAME, () => {
 
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/user"));
+app.use("/", require("./routes/post"));

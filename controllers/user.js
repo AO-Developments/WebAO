@@ -42,5 +42,5 @@ exports.logout_get = async (req, res) => {
 };
 
 exports.admin_get = async (req, res) => {
-	res.send("<h1>ADMIN</h1>");
+	res.render("pages/user/admin/panel");
 };

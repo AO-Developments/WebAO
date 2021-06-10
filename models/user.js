@@ -146,7 +146,7 @@ module.exports.Login = async (res, { email, password }) => {
 			});
 		}
 
-		const token = this.CreateToken(user);
+		const token = await this.CreateToken(user);
 
 		res.cookie(
 			"access-token",
@@ -158,13 +158,14 @@ module.exports.Login = async (res, { email, password }) => {
 	});
 };
 
-module.exports.CreateToken = (user) => {
+module.exports.CreateToken = async (user) => {
 	let payload = {
-		userId: user.id,
+		id: user.id,
+		name: user.name,
 		role: user.role,
 		createdAt: moment().unix(),
 		expiresAt: moment().add(process.env.JWT_TOKEN_EXPIRES, "m").unix(),
 	};
 
-	return jwt.sign(payload, process.env.JWT_SECRET);
+	return await jwt.sign(payload, process.env.JWT_SECRET);
 };

@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/css/partials/navbar.css">
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
@@ -16,6 +14,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
+            
+                <% if(user && user.role === "Admin") { %> 
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                    </li>
+                <% } %>
             </ul>
             <ul id="right-links" class="navbar-nav ms-auto">
                 <% if(user) { %>

@@ -1,0 +1,11 @@
+body{
+    margin: auto;
+    width: 60%;
+    background-image: url("https://img.freepik.com/free-photo/dark-rock-background_53876-88904.jpg?size=626&ext=jpg");
+}
+
+#header-img{
+    margin: auto;
+    height: 200px;
+    width: 700px;
+}
