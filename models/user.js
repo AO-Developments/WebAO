@@ -146,19 +146,20 @@ module.exports.Login = async (res, { email, password }) => {
 			});
 		}
 
-		const token = await this.CreateToken(user);
+		let token = await this.CreateToken(user);
 
-		res.cookie(
-			"access-token",
-			token,
-			require("../config/cookiesConfig").cookieConfig
-		);
+		res.setHeader("Access-Control-Allow-Credentials", true);
+		res.cookie("access-token", token, {
+			expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 60 * 1000),
+			httpOnly: true,
+			secure: false,
+		});
 
 		return res.redirect("/");
 	});
 };
 
-module.exports.CreateToken = async (user) => {
+module.exports.CreateToken = (user) => {
 	let payload = {
 		id: user.id,
 		name: user.name,
@@ -167,5 +168,5 @@ module.exports.CreateToken = async (user) => {
 		expiresAt: moment().add(process.env.JWT_TOKEN_EXPIRES, "m").unix(),
 	};
 
-	return await jwt.sign(payload, process.env.JWT_SECRET);
+	return jwt.sign(payload, process.env.JWT_SECRET);
 };

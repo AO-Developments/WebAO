@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 app.use(
 	cors({
-		origin: "http://localhost:3000",
+		origin: true,
 		credentials: true,
 	})
 );
@@ -30,7 +30,7 @@ app.use(async (req, res, next) => {
 		if (require("moment")().unix() < payload.expiresAt) {
 			req.user = payload;
 		} 
-	}
+	} 
 
 	res.locals.user = req.user;
 	next();
