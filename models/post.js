@@ -8,7 +8,7 @@ module.exports.GetAll = () => {
 				reject(error);
 			}
 
-			connection.query("SELECT * FROM posts", (error, results) => {
+			connection.query("SELECT * FROM posts ORDER BY post_date DESC", (error, results) => {
 				if (error) {
 					console.log(`Error executing query ${error.stack}`);
 					reject(error);

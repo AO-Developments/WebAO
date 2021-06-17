@@ -29,8 +29,8 @@ app.use(async (req, res, next) => {
 
 		if (require("moment")().unix() < payload.expiresAt) {
 			req.user = payload;
-		} 
-	} 
+		}
+	}
 
 	res.locals.user = req.user;
 	next();
@@ -42,4 +42,5 @@ app.listen(process.env.PORT, process.env.HOSTNAME, () => {
 
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/user"));
-app.use("/", require("./routes/post"));
+app.use("/", require("./routes/admin"));
+app.use("/p", require("./routes/post"));

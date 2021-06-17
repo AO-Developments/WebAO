@@ -3,6 +3,9 @@ const jwt = require("jsonwebtoken");
 const moment = require("moment");
 const db = require("../utils/database");
 
+const Logger =
+	require("simple-node-logger").createSimpleLogger("./logs/project.log");
+
 module.exports.GetAll = () => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
@@ -154,6 +157,8 @@ module.exports.Login = async (res, { email, password }) => {
 			httpOnly: true,
 			secure: false,
 		});
+
+		Logger.log("info", `Account ${user.id} just loggedin ${moment().format("YYYY/MM/DD")}`);
 
 		return res.redirect("/");
 	});

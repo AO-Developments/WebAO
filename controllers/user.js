@@ -41,6 +41,3 @@ exports.logout_get = async (req, res) => {
 	return res.redirect("/");
 };
 
-exports.admin_get = async (req, res) => {
-	res.render("pages/user/admin/panel");
-};

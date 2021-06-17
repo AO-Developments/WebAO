@@ -6,3 +6,8 @@ exports.post_post = async (req, res) => {
 
 	res.redirect("/");
 };
+
+exports.post_get = async (req, res) => {
+	const post = await Post.GetById(req.params.id);
+	res.render("pages/post/post", { post });
+};
