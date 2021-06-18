@@ -33,6 +33,7 @@ app.use(async (req, res, next) => {
 	}
 
 	res.locals.user = req.user;
+	res.locals.message = "";
 	next();
 });
 

@@ -6,6 +6,12 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="card w-50">
             <div class="card-body">
+                <% if(message) { %> 
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= message %>
+                        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <% } %>
                 <h5 class="card-title">Sign-in</h5>
                 <form action="/login" method="POST" class="needs-validation" novalidate>
                     <div class="mb-3">

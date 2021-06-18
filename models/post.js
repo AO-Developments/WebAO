@@ -1,16 +1,19 @@
 const db = require("../utils/database");
+const moment = require("moment");
+
+const Logger = require("simple-node-logger").createSimpleLogger("./logs/project.log");
 
 module.exports.GetAll = () => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				console.log(`Error getting connection ${error.stack}`);
+				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
 				reject(error);
 			}
 
 			connection.query("SELECT * FROM posts ORDER BY post_date DESC", (error, results) => {
 				if (error) {
-					console.log(`Error executing query ${error.stack}`);
+					Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
 					reject(error);
 				}
 
@@ -25,7 +28,7 @@ module.exports.GetById = (id) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				console.log(`Error getting connection ${error.stack}`);
+				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
 				reject(error);
 			}
 
@@ -34,7 +37,7 @@ module.exports.GetById = (id) => {
 				[id],
 				(error, results) => {
 					if (error) {
-						console.log(`Error executing query ${error.stack}`);
+						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
 						reject(error);
 					}
 
@@ -50,7 +53,7 @@ module.exports.GetByUserID = (userID) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				console.log(`Error getting connection ${error.stack}`);
+				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
 				reject(error);
 			}
 
@@ -59,7 +62,7 @@ module.exports.GetByUserID = (userID) => {
 				[userID],
 				(error, results) => {
 					if (error) {
-						console.log(`Error executing query ${error.stack}`);
+						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
 						reject(error);
 					}
 
@@ -71,23 +74,24 @@ module.exports.GetByUserID = (userID) => {
 	});
 };
 
-module.exports.SubmitPost = ({ ownerId, title, body }) => {
+module.exports.SubmitPost = ({ owner_id, title, body }) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				console.log(`Error getting connection ${error.stack}`);
+				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
 				reject(error);
 			}
 
 			connection.query(
 				"INSERT INTO posts SET ? ",
-				[{ owner_id: ownerId, title, body }],
+				[{ owner_id, title, body }],
 				(error, results) => {
 					if (error) {
-						console.log(`Error executing query ${error.stack}`);
+						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] INSERT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
 						reject(error);
 					}
 					connection.release();
+					Logger.log("info", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] POSTSUBMIT [ OWNER ] ${owner_id} [ TITLE ] ${title}`)
 					resolve(results[0]);
 				}
 			);
