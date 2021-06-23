@@ -31,7 +31,7 @@ app.use(async (req, res, next) => {
 			req.user = payload;
 		}
 	}
-
+	
 	res.locals.user = req.user;
 	res.locals.message = "";
 	next();
