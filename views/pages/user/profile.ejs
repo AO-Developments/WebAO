@@ -1,0 +1,9 @@
+<%- layout("layouts/boilerplate") %>
+
+<ul>
+		<% for(let i = 0; i < characters.length; i++) { %>
+			<li>
+				<%= characters[i].username %>
+			</li>
+		<% } %>	
+</ul>

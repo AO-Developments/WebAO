@@ -1,0 +1,199 @@
+20:03:51.586 ERROR [ DATE ] 2021/06/26 [ ACTION ] SELECT [ MESSAGE ] ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3 * FROM posts ORDER BY post_date DESC' at line 1 [ STACK ] Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '3 * FROM posts ORDER BY post_date DESC' at line 1
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/post.js:60:15
+    at Handshake.onConnect (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Handshake._callback (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:488:16)
+    at Handshake.Sequence.end (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10) 
+20:06:21.254 ERROR [ DATE ] 2021/06/26 [ ACTION ] SELECT [ MESSAGE ] ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESC' at line 1 [ STACK ] Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESC' at line 1
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/post.js:60:15
+    at Handshake.onConnect (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Handshake._callback (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:488:16)
+    at Handshake.Sequence.end (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10) 
+20:07:01.406 ERROR [ DATE ] 2021/06/26 [ ACTION ] SELECT [ MESSAGE ] ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY post_date DESC' at line 1 [ STACK ] Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY post_date DESC' at line 1
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/post.js:60:15
+    at Handshake.onConnect (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Handshake._callback (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:488:16)
+    at Handshake.Sequence.end (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Handshake.Sequence.OkPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:92:8)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10) 
+21:46:52.576 ERROR [ DATE ] 2021/06/26 [ ACTION ] INSERT [ MESSAGE ] ER_BAD_NULL_ERROR: Column 'name' cannot be null [ STACK ] Error: ER_BAD_NULL_ERROR: Column 'name' cannot be null
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/user.js:185:16
+    at /home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1353:21
+    at Immediate.next (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1233:21)
+    at processImmediate (node:internal/timers:464:21) 
+21:47:34.714 ERROR [ DATE ] 2021/06/26 [ ACTION ] INSERT [ MESSAGE ] ER_BAD_NULL_ERROR: Column 'name' cannot be null [ STACK ] Error: ER_BAD_NULL_ERROR: Column 'name' cannot be null
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/user.js:185:16
+    at /home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1353:21
+    at Immediate.next (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1233:21)
+    at processImmediate (node:internal/timers:464:21) 
+21:48:48.933 ERROR [ DATE ] 2021/06/26 [ ACTION ] INSERT [ MESSAGE ] ER_BAD_NULL_ERROR: Column 'name' cannot be null [ STACK ] Error: ER_BAD_NULL_ERROR: Column 'name' cannot be null
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/user.js:185:16
+    at /home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1353:21
+    at Immediate.next (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1233:21)
+    at processImmediate (node:internal/timers:464:21) 
+21:49:16.823 ERROR [ DATE ] 2021/06/26 [ ACTION ] INSERT [ MESSAGE ] ER_BAD_NULL_ERROR: Column 'name' cannot be null [ STACK ] Error: ER_BAD_NULL_ERROR: Column 'name' cannot be null
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/user.js:185:16
+    at /home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1353:21
+    at Immediate.next (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1233:21)
+    at processImmediate (node:internal/timers:464:21) 
+21:50:05.160 ERROR [ DATE ] 2021/06/26 [ ACTION ] INSERT [ MESSAGE ] ER_BAD_NULL_ERROR: Column 'name' cannot be null [ STACK ] Error: ER_BAD_NULL_ERROR: Column 'name' cannot be null
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/user.js:185:16
+    at /home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1353:21
+    at Immediate.next (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1233:21)
+    at processImmediate (node:internal/timers:464:21) 
+21:50:52.603 ERROR [ DATE ] 2021/06/26 [ ACTION ] INSERT [ MESSAGE ] ER_BAD_NULL_ERROR: Column 'name' cannot be null [ STACK ] Error: ER_BAD_NULL_ERROR: Column 'name' cannot be null
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/user.js:185:16
+    at /home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1353:21
+    at Immediate.next (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1233:21)
+    at processImmediate (node:internal/timers:464:21) 
+21:51:26.844 ERROR [ DATE ] 2021/06/26 [ ACTION ] INSERT [ MESSAGE ] ER_BAD_NULL_ERROR: Column 'name' cannot be null [ STACK ] Error: ER_BAD_NULL_ERROR: Column 'name' cannot be null
+    at Query.Sequence._packetToError (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:394:28)
+    at addChunk (node:internal/streams/readable:312:12)
+    --------------------
+    at Protocol._enqueue (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at PoolConnection.query (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/mysql/lib/Connection.js:198:25)
+    at /home/gacela/Documents/Programming/WebAO/src/server/models/user.js:185:16
+    at /home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1353:21
+    at Immediate.next (/home/gacela/Documents/Programming/WebAO/src/server/node_modules/bcryptjs/dist/bcrypt.js:1233:21)
+    at processImmediate (node:internal/timers:464:21) 
+21:53:29.286 INFO  [ ACCOUNT ] webtest7@gmail.com [ ACTION ] REGISTER [ DATE ] 2021/06/26 
+21:54:36.428 INFO  [ DATE ] 2021/06/26 [ ACCOUNT ] 3 [ ACTION ] LOGGIN 
+21:55:48.988 INFO  [ DATE ] 2021/06/26 [ ACCOUNT ] 3 [ ACTION ] LOGGIN 
+21:57:20.680 INFO  [ DATE ] 2021/06/26 [ ACCOUNT ] 3 [ ACTION ] LOGGIN 
+22:00:16.567 INFO  [ DATE ] 2021/06/26 [ ACCOUNT ] 3 [ ACTION ] LOGGIN 
+22:02:22.653 INFO  [ DATE ] 2021/06/26 [ ACCOUNT ] 3 [ ACTION ] LOGGIN 
+22:13:17.334 INFO  [ DATE ] 2021/06/26 [ ACCOUNT ] 3 [ ACTION ] LOGGIN 

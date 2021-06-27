@@ -3,19 +3,32 @@ const jwt = require("jsonwebtoken");
 const moment = require("moment");
 const db = require("../utils/database");
 
-const Logger = require("simple-node-logger").createSimpleLogger("./logs/project.log");
+const Logger =
+	require("simple-node-logger").createSimpleLogger("./logs/project.log");
 
 module.exports.GetAll = () => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETALL [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETALL [ MESSAGE ] ${
+						error.message
+					} [ STACK ] ${error.stack}`
+				);
 				reject(error);
 			}
 
 			connection.query("SELECT * FROM accounts", (error, results) => {
 				if (error) {
-					Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+					Logger.log(
+						"error",
+						`[ DATE ] ${moment().format(
+							"YYYY/MM/DD"
+						)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+							error.stack
+						}`
+					);
 					reject(error);
 				}
 
@@ -30,7 +43,14 @@ module.exports.GetByEmail = (email) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETBYEMAIL [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETBYEMAIL [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
 				reject(error);
 			}
 
@@ -39,7 +59,14 @@ module.exports.GetByEmail = (email) => {
 				[email],
 				(error, results) => {
 					if (error) {
-						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
 						reject(error);
 					}
 
@@ -55,7 +82,14 @@ module.exports.GetById = (id) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETBYID [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETBYID [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
 				reject(error);
 			}
 
@@ -64,7 +98,14 @@ module.exports.GetById = (id) => {
 				[id],
 				(error, results) => {
 					if (error) {
-						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
 						reject(error);
 					}
 
@@ -80,7 +121,14 @@ module.exports.GetByAccount = (account) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETBYACCOUNT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETBYACCOUNT [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
 				reject(error);
 			}
 
@@ -89,7 +137,14 @@ module.exports.GetByAccount = (account) => {
 				[account],
 				(error, results) => {
 					if (error) {
-						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
 						reject(error);
 					}
 
@@ -105,24 +160,51 @@ module.exports.Register = ({ name, password, email }) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
 				reject(error);
 			}
 
 			bcrypt.hash(password, 8, (error, hash) => {
 				if (error) {
-					Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] HASH [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+					Logger.log(
+						"error",
+						`[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] HASH [ MESSAGE ] ${
+							error.message
+						} [ STACK ] ${error.stack}`
+					);
 					reject(error);
 				}
-
-				connection.query("INSERT INTO accounts SET ? ",	[{ name, password: hash, email }], (error, results) => {
+				console.log(name);
+				connection.query(
+					"INSERT INTO accounts SET ? ",
+					[{ name, password: hash, email }],
+					(error, results) => {
 						if (error) {
-							Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] INSERT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
+							Logger.log(
+								"error",
+								`[ DATE ] ${moment().format(
+									"YYYY/MM/DD"
+								)} [ ACTION ] INSERT [ MESSAGE ] ${error.message} [ STACK ] ${
+									error.stack
+								}`
+							);
 							reject(error);
 						}
 						connection.release();
-						Logger.log("info", `[ ACCOUNT ] ${email} [ ACTION ] REGISTER [ DATE ] ${moment().format("YYYY/MM/DD")}`);
-						resolve(results[0]);
+						Logger.log(
+							"info",
+							`[ ACCOUNT ] ${email} [ ACTION ] REGISTER [ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)}`
+						);
+						resolve(results);
 					}
 				);
 			});
@@ -134,12 +216,16 @@ module.exports.Login = async (res, { email, password }) => {
 	const user = await this.GetByEmail(email);
 
 	if (!user) {
-		return res.render("pages/user/login", { message: "Email or password incorrect. Please try again."});
+		return res.render("pages/user/login", {
+			message: "Email or password incorrect. Please try again.",
+		});
 	}
 
 	bcrypt.compare(password, user.password, async (error, result) => {
 		if (error || !result) {
-			return res.render("pages/user/login", { message: "Email or password incorrect. Please try again."});
+			return res.render("pages/user/login", {
+				message: "Email or password incorrect. Please try again.",
+			});
 		}
 
 		let token = await this.CreateToken(user);
@@ -151,7 +237,12 @@ module.exports.Login = async (res, { email, password }) => {
 			secure: false,
 		});
 
-		Logger.log("info", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACCOUNT ] ${user.id} [ ACTION ] LOGGIN`);
+		Logger.log(
+			"info",
+			`[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACCOUNT ] ${
+				user.id
+			} [ ACTION ] LOGGIN`
+		);
 		return res.redirect("/");
 	});
 };
@@ -166,4 +257,43 @@ module.exports.CreateToken = (user) => {
 	};
 
 	return jwt.sign(payload, process.env.JWT_SECRET);
+};
+
+module.exports.GetCharacters = (id) => {
+	return new Promise((resolve, reject) => {
+		db.getConnection((error, connection) => {
+			if (error) {
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETCHARACTERS [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
+				reject(error);
+			}
+
+			connection.query(
+				"SELECT username FROM characters WHERE account_id = ?",
+				[id],
+				(error, results) => {
+					if (error) {
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
+						reject(error);
+					}
+
+					connection.release();
+					resolve(results);
+				}
+			);
+		});
+	});
 };

@@ -1,25 +1,81 @@
 const db = require("../utils/database");
 const moment = require("moment");
 
-const Logger = require("simple-node-logger").createSimpleLogger("./logs/project.log");
+const Logger =
+	require("simple-node-logger").createSimpleLogger("./logs/project.log");
 
 module.exports.GetAll = () => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
 				reject(error);
 			}
 
-			connection.query("SELECT * FROM posts ORDER BY post_date DESC", (error, results) => {
-				if (error) {
-					Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
-					reject(error);
-				}
+			connection.query(
+				"SELECT * FROM posts ORDER BY post_date DESC",
+				(error, results) => {
+					if (error) {
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
+						reject(error);
+					}
 
-				connection.release();
-				resolve(results);
-			});
+					connection.release();
+					resolve(results);
+				}
+			);
+		});
+	});
+};
+
+module.exports.GetTheLastestOnes = () => {
+	return new Promise((resolve, reject) => {
+		db.getConnection((error, connection) => {
+			if (error) {
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
+				reject(error);
+			}
+
+			connection.query(
+				"SELECT * FROM posts ORDER BY post_date DESC LIMIT 3",
+				(error, results) => {
+					if (error) {
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
+						reject(error);
+					}
+
+					connection.release();
+					resolve(results);
+				}
+			);
 		});
 	});
 };
@@ -28,7 +84,14 @@ module.exports.GetById = (id) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
 				reject(error);
 			}
 
@@ -37,7 +100,14 @@ module.exports.GetById = (id) => {
 				[id],
 				(error, results) => {
 					if (error) {
-						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
 						reject(error);
 					}
 
@@ -53,7 +123,14 @@ module.exports.GetByUserID = (userID) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
 				reject(error);
 			}
 
@@ -62,7 +139,14 @@ module.exports.GetByUserID = (userID) => {
 				[userID],
 				(error, results) => {
 					if (error) {
-						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] SELECT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
 						reject(error);
 					}
 
@@ -78,7 +162,14 @@ module.exports.SubmitPost = ({ owner_id, title, body }) => {
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
-				Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`);
+				Logger.log(
+					"error",
+					`[ DATE ] ${moment().format(
+						"YYYY/MM/DD"
+					)} [ ACTION ] GETCONNECTION [ MESSAGE ] ${error.message} [ STACK ] ${
+						error.stack
+					}`
+				);
 				reject(error);
 			}
 
@@ -87,11 +178,23 @@ module.exports.SubmitPost = ({ owner_id, title, body }) => {
 				[{ owner_id, title, body }],
 				(error, results) => {
 					if (error) {
-						Logger.log("error", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] INSERT [ MESSAGE ] ${error.message} [ STACK ] ${error.stack}`)
+						Logger.log(
+							"error",
+							`[ DATE ] ${moment().format(
+								"YYYY/MM/DD"
+							)} [ ACTION ] INSERT [ MESSAGE ] ${error.message} [ STACK ] ${
+								error.stack
+							}`
+						);
 						reject(error);
 					}
 					connection.release();
-					Logger.log("info", `[ DATE ] ${moment().format("YYYY/MM/DD")} [ ACTION ] POSTSUBMIT [ OWNER ] ${owner_id} [ TITLE ] ${title}`)
+					Logger.log(
+						"info",
+						`[ DATE ] ${moment().format(
+							"YYYY/MM/DD"
+						)} [ ACTION ] POSTSUBMIT [ OWNER ] ${owner_id} [ TITLE ] ${title}`
+					);
 					resolve(results[0]);
 				}
 			);

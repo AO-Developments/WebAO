@@ -4,15 +4,16 @@ const User = require("../models/user");
 require("dotenv").config();
 
 exports.register_post = async (req, res) => {
-	const { account, email, password } = req.body;
-
-	if ((await User.GetByEmail(email)) != 0)
+	const { username, email, password } = req.body;
+	
+	if (await User.GetByEmail(email))
 		return res.send({ message: "That email is alredy in use." });
 
-	if ((await User.GetByAccount(account)) != 0)
+	if (await !User.GetByAccount(username)){
 		return res.send({ message: "That account name is alredy in use." });
+	}
 
-	await User.Register({ name: account, password, email });
+	await User.Register({ name: username, password, email });
 };
 
 exports.register_get = (req, res) => {
@@ -40,4 +41,14 @@ exports.logout_get = async (req, res) => {
 
 	return res.redirect("/");
 };
+
+exports.profile_get = async (req, res) => {
+	if (!req.user) {
+		return res.redirect("/");
+	}
+
+	let characters = await User.GetCharacters(req.user.id);
+	
+	return res.render("pages/user/profile", { characters });
+}
 
