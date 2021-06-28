@@ -42,7 +42,8 @@ module.exports.GetAll = () => {
 	});
 };
 
-module.exports.GetTheLastestOnes = () => {
+module.exports.GetByPage = (page) => {
+	const perPage = 3;
 	return new Promise((resolve, reject) => {
 		db.getConnection((error, connection) => {
 			if (error) {
@@ -58,7 +59,9 @@ module.exports.GetTheLastestOnes = () => {
 			}
 
 			connection.query(
-				"SELECT * FROM posts ORDER BY post_date DESC LIMIT 3",
+				`SELECT * FROM posts ORDER BY post_date DESC LIMIT ${
+					page * perPage
+				}, ${perPage}`,
 				(error, results) => {
 					if (error) {
 						Logger.log(

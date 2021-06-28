@@ -1,9 +1,11 @@
 <%- layout("layouts/boilerplate") %>
 
-<ul>
+<link rel="stylesheet" type="text/css" href="/css/pages/user/profile.css" />
+
+<main class="row">
+	<ul>
 		<% for(let i = 0; i < characters.length; i++) { %>
-			<li>
-				<%= characters[i].username %>
-			</li>
-		<% } %>	
-</ul>
+		<li><%= characters[i].username %></li>
+		<% } %>
+	</ul>
+</main>

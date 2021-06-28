@@ -10,5 +10,15 @@
         <% for(let post of posts) { %> 
            <%- include("../partials/post", { post }) %>
         <% } %>
+        <div class="row justify-content-between">
+            <div class="col-6 text-start">
+                <a href="/page/<%= page %>">back</a>
+            </div>
+            <div class="col-6 text-end">
+                <% if(page !== 1) { %>
+                    <a href="/page/<%= page-2 %>">forward</a>    
+                <% } %>
+            </div>
+        </div>
     </main>
 </div>
